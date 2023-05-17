@@ -1,0 +1,23 @@
+{
+  "name": "study-data-structure-and-algorithm",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/seungwoo-ji/study-data-structure-and-algorithm.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/seungwoo-ji/study-data-structure-and-algorithm/issues"
+  },
+  "homepage": "https://github.com/seungwoo-ji/study-data-structure-and-algorithm#readme",
+  "dependencies": {
+    "jest": "^29.5.0"
+  }
+}
