@@ -4,10 +4,11 @@
  */
 const maxSubArray = (nums) => {
   let max = nums[0];
+  let currSum = max;
 
   for (let i = 1; i < nums.length; ++i) {
-    nums[i] = Math.max(nums[i], nums[i] + nums[i - 1]);
-    max = Math.max(nums[i], max);
+    currSum = Math.max(nums[i], nums[i] + currSum);
+    max = Math.max(currSum, max);
   }
 
   return max;
