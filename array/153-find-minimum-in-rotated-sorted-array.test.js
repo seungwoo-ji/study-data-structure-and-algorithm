@@ -1,4 +1,4 @@
-const findMin = require('./153-find-maximum-in-rotated-sorted-array');
+const findMin = require('./153-find-minimum-in-rotated-sorted-array');
 
 test('nums = [3,4,5,1,2] returns 1', () => {
   expect(findMin([3, 4, 5, 1, 2])).toBe(1);
