@@ -66,4 +66,23 @@ const coinChangeTwo = (coins, amount) => {
   return result === Infinity ? -1 : result;
 };
 
-module.exports = { coinChange, coinChangeTwo };
+// dp - tabulation (bottom-up approach)
+// time: O(N)
+// space: O(N)
+const coinChangeThree = (coins, amount) => {
+  const dp = new Array(amount + 1).fill(Infinity);
+  dp[0] = 0;
+
+  for (let sum = 1; sum <= amount; ++sum) {
+    for (let coinIndex = 0; coinIndex < coins.length; ++coinIndex) {
+      // note that we only check if the difference between sum and current coin value is non-negative value
+      if (sum - coins[coinIndex] >= 0) {
+        dp[sum] = Math.min(dp[sum], 1 + dp[sum - coins[coinIndex]]);
+      }
+    }
+  }
+
+  return dp[amount] === Infinity ? -1 : dp[amount];
+};
+
+module.exports = { coinChange, coinChangeTwo, coinChangeThree };
