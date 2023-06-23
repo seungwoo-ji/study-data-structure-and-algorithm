@@ -33,14 +33,19 @@ const climbStairsTwo = (n) => {
 // time: O(N)
 // space: O(1)
 const climbStairsThree = (n) => {
-  // n = 5
-  // 0  1  2  3  4  5
-  //             1  1
-  //           one two
-  let one = 1;
+  // base case
+  if (n <= 0) return 0;
+  if (n === 1) return 1;
+  if (n === 2) return 2;
+
+  // n = 3
+  // 0  1  2  3
+  // 0  1  2  *
+  //  two one
+  let one = 2;
   let two = 1;
 
-  for (let i = 2; i <= n; ++i) {
+  for (let i = 3; i <= n; ++i) {
     [one, two] = [one + two, one];
   }
 
